@@ -13,7 +13,7 @@ export class MiningScene extends Phaser.Scene {
 
     preload() {
         // Load your isometric tileset and sprites
-        this.load.image('tiles', '/assets/isometric-tiles.png');
+        this.load.image('tiles', '/assets/isometric-tile.png');
         this.load.spritesheet('worker', '/assets/worker-sprite.png', {
             frameWidth: 64,
             frameHeight: 64
