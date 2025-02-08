@@ -1,30 +1,60 @@
 # Eternal Sphere Gathering
 
-A real-time resource gathering game built with React, TypeScript, and Phaser.js. Part of the Eternal Sphere game ecosystem.
+Eternal Sphere Gathering is an isometric 2D resource gathering game built with React, TypeScript, and Phaser.js. It's part of the larger Eternal Sphere game ecosystem.
 
-## Overview
+## Features
 
-Eternal Sphere Gathering is an isometric 2D game where players manage various resource gathering stations. Currently featuring:
-
-- Mining Station: Manage miners gathering various minerals
-- Future stations planned:
-  - Herbalism Station: Gather herbs and plants
-  - Hunting Station: Hunt and skin creatures
-
-## Prerequisites
-
-- Node.js 18+
-- npm or yarn
-- Modern web browser with WebGL support
+- Isometric 2D game environment
+- Multiple gathering stations:
+  - Mining Station (Current Focus)
+  - Herbalism Station (Planned)
+  - Hunting Station (Planned)
+- Real-time resource gathering mechanics
+- Worker management system
+- Station upgrades and progression
+- Resource market integration
 
 ## Tech Stack
 
+### Frontend
 - React 18
 - TypeScript 5
 - Phaser.js 3
 - Redux Toolkit
 - Tailwind CSS
 - WebSocket for real-time updates
+
+### Backend Integration
+- Authentication Service (Go/Gin)
+- Resource Service (Go/Gin)
+- Market Service (Go/Gin)
+- Event Bus (Go/gRPC)
+
+## Prerequisites
+
+- Node.js (v18+)
+- npm or yarn
+- Modern web browser with WebGL support
+
+## Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/eternalsphere-gathering.git
+cd eternalsphere-gathering
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
 
 ## Project Structure
 
@@ -37,6 +67,7 @@ eternalsphere-gathering/
 │   │   └── stations/      # Station-specific components
 │   ├── game/              # Game logic
 │   │   ├── core/          # Shared game logic
+│   │   │   └── interfaces/# TypeScript interfaces
 │   │   ├── stations/      # Station implementations
 │   │   ├── scenes/        # Phaser scenes
 │   │   └── config/        # Game configuration
@@ -47,52 +78,34 @@ eternalsphere-gathering/
 │   └── assets/           # Game assets
 ```
 
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/eternalsphere-gathering.git
-cd eternalsphere-gathering
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-4. Open http://localhost:5173 in your browser
-
-## Development
-
-### Available Scripts
+## Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
-- `npm test` - Run tests
-- `npm run preview` - Preview production build locally
+- `npm run preview` - Preview production build
 
-### Adding a New Station
+## Game Architecture
 
-1. Create station interface implementation in `src/game/stations/`
-2. Create Phaser scene in `src/game/scenes/`
-3. Add UI components in `src/components/stations/`
-4. Register new station type in core game configuration
+### Core Components
 
-## Backend Integration
+1. **Station System**
+   - Resource gathering mechanics
+   - Worker management
+   - Upgrade system
+   - Storage management
 
-The game connects to these Eternal Sphere backend services:
+2. **Worker System**
+   - Pathfinding
+   - Resource gathering
+   - State management
+   - Task queue
 
-- Authentication Service (Go/Gin)
-- Resource Service (Go/Gin)
-- Market Service (Go/Gin)
-- Event Bus (Go/gRPC)
+3. **Resource System**
+   - Resource types
+   - Spawning mechanics
+   - Depletion and regeneration
+   - Market integration
 
 ## Contributing
 
@@ -102,11 +115,11 @@ The game connects to these Eternal Sphere backend services:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
-
-[License Type] - see LICENSE.md file for details
-
 ## Related Projects
 
-- [eternalsphere-auth](https://github.com/yourusername/eternalsphere-auth)
-- [eternalsphere-shared-go](https://github.com/yourusername/eternalsphere-shared-go)
+- [eternalsphere-auth](https://github.com/NBDor/eternalsphere-auth) - Authentication service
+- [eternalsphere-shared-go](https://github.com/NBDor/eternalsphere-shared-go) - Shared Go libraries
+
+## License
+
+[License Type] - See LICENSE file for details
